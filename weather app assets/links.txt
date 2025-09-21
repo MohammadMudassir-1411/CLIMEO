@@ -1,0 +1,123 @@
+figma
+https://www.figma.com/file/3L8GDidIhSOKT19XC7WXHY/Weather-App-By-neat-roots?type=design&t=Bs0rf8mEBm5HePMM-6
+
+lottianimations
+github 
+https://github.com/airbnb/lottie-android
+
+//  lottie animations
+    implementation 'com.airbnb.android:lottie:6.1.0'
+// GSON converter
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+// retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+ buildFeatures {
+        viewBinding true
+    }
+
+
+
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace = "com.example.wheather_app"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.wheather_app"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.car.ui.lib)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    // Ensure 'lottieVersion' is defined in your dependencies block or use a specific version
+    implementation("com.airbnb.android:lottie:3.7.0") // Use the latest stable version
+
+}
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+{
+    "coord": {
+        "lon": 78.4744,
+        "lat": 17.3753
+    },
+    "weather": [
+        {
+            "id": 721,
+            "main": "Haze",
+            "description": "haze",
+            "icon": "50d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 302.38,
+        "feels_like": 304.26,
+        "temp_min": 301.88,
+        "temp_max": 302.38,
+        "pressure": 1011,
+        "humidity": 58,
+        "sea_level": 1011,
+        "grnd_level": 956
+    },
+    "visibility": 5000,
+    "wind": {
+        "speed": 4.63,
+        "deg": 90
+    },
+    "clouds": {
+        "all": 40
+    },
+    "dt": 1730631860,
+    "sys": {
+        "type": 1,
+        "id": 9214,
+        "country": "IN",
+        "sunrise": 1730594725,
+        "sunset": 1730636030
+    },
+    "timezone": 19800,
+    "id": 1269843,
+    "name": "Hyderabad",
+    "cod": 200
+}
